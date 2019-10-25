@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поисковая система</title>
+	<style type="text/css" media="screen, print, projection">
+		body,
+		html {
+			margin:0;
+			padding:0;
+			color:#000;
+			background:#FFFFFF;
+		}
+		#wrap {
+			width:750px;
+			margin:0 auto;
+			background:#FFFFFF;
+		}
+		#header {
+			padding:5px 10px;
+			background:#FFA500;
+		}
+		h1 {
+			margin:0;
+			color:#3E0068;
+			text-align:center;
+		}
+		#main {
+			float:center;
+			width:480px;
+			padding:10px;
+			background:#FFFFFF;
+		}
+		h2 {
+			argin:0 0 1em;
+		}
+		#footer {
+			clear:both;
+			padding:5px 10px;
+			background:#CCCCCC;
+			text-align: center;
+		}
+		#footer p {
+			margin:0;
+		}
+	</style>
+
+</head>
+<body>
+<div id="wrap">
+	<div id="header"><h1>Поисковая система</h1></div>
+	<div id="main">
+		<form method="POST">
+			<input name="text">
+			<input type="submit">
+		</form>
+		<ul>
+			{% for name, url in urls.items() %}
+			<li><a href="{{ url }}">{{ name }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div id="footer">
+		<p>Автор — Никита Змановский</p>
+	</div>
+</div>
+</body>
+</html>
